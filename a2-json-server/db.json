@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "title": "title 1",
+            "details": "something something dark side"
+        },
+        {
+            "id": 2,
+            "title": "my title",
+            "details": "my details not yours"
+        }
+    ]
+}

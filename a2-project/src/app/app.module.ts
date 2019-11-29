@@ -6,6 +6,9 @@ import { MenuComponent } from './home/menu/menu.component';
 import { ShellComponent } from './home/shell/shell.component';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

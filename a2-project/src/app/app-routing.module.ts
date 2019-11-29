@@ -9,9 +9,11 @@ const routes: Routes = [
     component: ShellComponent, // this is for some trick with routing..
     children: [
       { path: 'welcome', component: WelcomeComponent },
-      // {
-      //   path: 'items',        
-      // }
+      {
+        path: 'items',
+        loadChildren: () =>
+          import('./items/item.module').then(m => m.ItemModule)
+      },
       {path: '', redirectTo: 'welcome', pathMatch: 'full'}
     ]
   }

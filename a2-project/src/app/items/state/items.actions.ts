@@ -17,67 +17,82 @@ export enum ItemActionTypes {
 }
 
 export class Load implements Action {
-    readonly type: ItemActionTypes.Load;
+    readonly type = ItemActionTypes.Load;
 }
 
 export class LoadSuccess implements Action {
-    readonly type: ItemActionTypes.LoadSuccess;
+    readonly type = ItemActionTypes.LoadSuccess;
+
+    constructor(public payload: Item[]) { }
 }
 
 export class LoadFail implements Action {
-    readonly type: ItemActionTypes.LoadFail;
+    readonly type = ItemActionTypes.LoadFail;
 }
 
 export class CreateItem implements Action {
-    readonly type: ItemActionTypes.CreateItem;
+    readonly type = ItemActionTypes.CreateItem;
 
     constructor(public payload: Item) { }
 }
 
 export class CreateItemSuccess implements Action {
-    readonly type: ItemActionTypes.CreateItemSuccess;
+    readonly type = ItemActionTypes.CreateItemSuccess;
 
     constructor(public payload: Item) { }
 }
 
 export class CreateItemFail implements Action {
-    readonly type: ItemActionTypes.CreateItemFail;
+    readonly type = ItemActionTypes.CreateItemFail;
 
     constructor(public payload: Item) { }
 }
 
 export class UpdateItem implements Action {
-    readonly type: ItemActionTypes.UpdateItem;
+    readonly type = ItemActionTypes.UpdateItem;
 
     constructor(public payload: Item) { }
 }
 
 export class UpdateItemSuccess implements Action {
-    readonly type: ItemActionTypes.UpdateItemSuccess;
+    readonly type = ItemActionTypes.UpdateItemSuccess;
 
     constructor(public payload: Item) { }
 }
 
 export class UpdateItemFail implements Action {
-    readonly type: ItemActionTypes.UpdateItemFail;
+    readonly type = ItemActionTypes.UpdateItemFail;
 
     constructor(public payload: Item) { }
 }
 
 export class DeleteItem implements Action {
-    readonly type: ItemActionTypes.DeleteItem;
+    readonly type = ItemActionTypes.DeleteItem;
 
     constructor(public payload: Item) { }
 }
 
 export class DeleteItemSuccess implements Action {
-    readonly type: ItemActionTypes.DeleteItemSuccess;
+    readonly type = ItemActionTypes.DeleteItemSuccess;
 
     constructor(public payload: Item) { }
 }
 
 export class DeleteItemFail implements Action {
-    readonly type: ItemActionTypes.DeleteItemFail;
+    readonly type = ItemActionTypes.DeleteItemFail;
 
     constructor(public payload: Item) { }
 }
+
+export type ItemActions = Load |
+LoadSuccess |
+LoadFail |
+CreateItem |
+CreateItemSuccess |
+CreateItemFail |
+UpdateItem |
+UpdateItemSuccess |
+UpdateItemFail |
+DeleteItem |
+DeleteItemSuccess |
+DeleteItemFail;

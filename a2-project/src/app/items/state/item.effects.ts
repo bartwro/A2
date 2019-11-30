@@ -23,4 +23,15 @@ export class ItemEffects {
             )
         )
     );
+
+    @Effect()
+    addItem$: Observable<Action> = this.actions$.pipe(
+        ofType(actions.ItemActionTypes.CreateItem),
+        map( (action: actions.CreateItem) => action.payload),
+        map(item => new actions.CreateItemSuccess(item))
+        //mergeMap(action => this.itemService.AddItem(action).pipe(
+            //map(i => new actions.CreateItemSuccess(i)),
+            //catchError(err => of(new actions.CreateItemFail(err))))
+        );
+    //);
 }

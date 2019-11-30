@@ -16,7 +16,11 @@ export function reducer(state = initialState, action: ItemActions): ItemState {
                 ...state,
                 Items: action.payload
             };
-        
+        case ItemActionTypes.CreateItemSuccess:
+            return {
+                ...state,
+                Items: state.Items.concat(action.payload)
+            };
         default:
             return state;
     }

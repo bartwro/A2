@@ -22,4 +22,8 @@ export class ItemShellComponent implements OnInit {
     this.items$ = this.store.pipe(select(fromItems.getItems));
   }
 
+  addItem(item: Item){
+    this.store.dispatch(new actions.CreateItem(item));
+  }
+
 }
